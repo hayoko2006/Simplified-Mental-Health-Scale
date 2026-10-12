@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>简易精神症状自评量表系统 · 抑郁 / 焦虑 / 躁狂 / 双相 / 睡眠 / 精神病性风险</title>
+<meta name="description" content="基于 PHQ-9、GAD-7、ASRM、MDQ、ISI、PQ-16 六项标准化量表的在线精神症状自评系统，实时计分并给出各维度得分区间与分级说明。结果仅供参考，不能替代专业医疗诊断。">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#/home" data-nav-brand>
+      <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+      简易精神症状自评
+    </a>
+    <nav class="topnav" aria-label="主导航">
+      <a href="#/home" data-nav="home">导览</a>
+      <a href="#/quiz" data-nav="quiz">测评</a>
+      <a href="#/references" data-nav="references">参考文献</a>
+      <a href="#/results" data-nav="results">结果</a>
+    </nav>
+    <div class="topbar-progress-wrap" title="作答完成度">
+      <div class="topbar-track"><div id="topbar-progress"></div></div>
+      <span id="topbar-count">0/0</span>
+    </div>
+  </div>
+</header>
+
+<main id="app"></main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span><strong>本测评仅为参考，不能替代专业医疗诊断。</strong>如需确诊或干预，请前往精神科/临床心理门诊。若出现自伤或伤人冲动，请立即拨打当地心理援助热线或急救电话。</span>
+    <span>作答数据仅保存在本机浏览器 · 不上传、不存储于服务器</span>
+  </div>
+</footer>
+
+<script src="js/scales.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
