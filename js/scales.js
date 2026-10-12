@@ -282,6 +282,26 @@
     }
   ];
 
+  /* ---------- 展示元数据（首页卡片 / 答题页 / 结果页共用） ---------- */
+
+  var DIM_META = {
+    phq9: { abbr: 'PHQ-9', tagline: '评估最近两周的情绪低落、兴趣减退、精力下降等核心抑郁症状。', minutes: 2 },
+    gad7: { abbr: 'GAD-7', tagline: '评估最近两周的紧张、担忧、无法放松等广泛性焦虑症状。', minutes: 1 },
+    asrm: { abbr: 'ASRM', tagline: '评估最近一周的心境高涨、自信膨胀、睡眠需求减少等躁狂表现。', minutes: 2 },
+    mdq:  { abbr: 'MDQ',  tagline: '回顾一生中是否出现过一段轻躁狂/躁狂时期，及其造成的影响。', minutes: 2 },
+    isi:  { abbr: 'ISI',  tagline: '评估最近两周的入睡困难、睡眠维持困难与日间功能受损。', minutes: 2 },
+    pq16: { abbr: 'PQ-16', tagline: '筛查最近一年的知觉异常、思维体验与多疑等精神病性风险。', minutes: 3 }
+  };
+
+  SCALES.forEach(function (scale) {
+    var m = DIM_META[scale.id];
+    if (m) {
+      scale.abbr = m.abbr;
+      scale.tagline = m.tagline;
+      scale.minutes = m.minutes;
+    }
+  });
+
   /* ---------- 元数据：为条目分配稳定 key ---------- */
 
   SCALES.forEach(function (scale) {
@@ -452,5 +472,6 @@
   global.SCALES = SCALES;
   global.TOTAL_ITEMS = TOTAL_ITEMS;
   global.requiredKeys = requiredKeys;
+  global.computeScale = scoreScale;
   global.computeAll = computeAll;
 })(window);
